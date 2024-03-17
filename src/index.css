@@ -1,0 +1,526 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* landing page */
+
+.landingpage {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: 0.5s;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.video-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%; /* Adjusted height to fill the remaining space below the navbar */
+  top:0; /* Adjusted top position to start below the navbar */
+  left: -13px;
+  object-fit: cover;
+ }
+
+.bg-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: -13px;
+  z-index: 1;
+}
+/* Custom CSS to change size and color of carousel arrows */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 3rem; /* Adjust as needed */
+  height: 3rem; /* Adjust as needed */
+  color: blue; /* Change to desired color */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none; /* Remove default arrow icon */
+}
+
+
+/* Remaining styles for navbar, menu, home-text, etc. */
+
+.home-text {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 2;
+}
+
+.home-text h1 {
+  font-size: 4em;
+  animation-name: fade;
+  animation-duration: 4s;
+}
+
+.home-text p {
+  justify-self: flex-end;
+  font-size: 2em;
+}
+  
+  .home-text {
+    position: absolute;
+    top: 50%;
+    color: #ffffff;
+    font-family:inherit;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .heading {
+    font-size: 3em;
+    color: white;
+    transition: font-size 0.5s ease; /* Add transition for font size */
+  }
+  .home-btn {
+    width: 120px;
+    height: 40px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .home-btn:hover {
+    background-color: #ff0000; /* Change background color on hover */
+    color: #ffffff; /* Change text color on hover */
+  }
+  @keyframes fade {
+    0% {
+        opacity: 0;
+        margin-left: 3em;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Option 1: Padding */
+.container-fluid{
+  position: relative;
+  top: -4;
+}
+
+/* resultpage styles */
+/* Main result container */
+.margindena {
+  width: 90vw;
+}
+
+@media screen and (min-width: 768px) {
+  .margindena {
+    margin-top: 342em; /* Adjust the margin for larger screens */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .margindena {
+    margin-top: 330rem; /* Adjust the margin for smaller screens */
+  }
+}
+
+.prediction-heading {
+  position: relative;
+  width: 100%;
+  background-image: url('./media/resultheading.jpg'); /* Add your background image URL */
+  background-size: cover;
+  background-position: center;
+  color: white; /* Set text color */
+  padding: 20px; /* Add padding for better visibility */
+  overflow: hidden; /* Hide overflow to prevent text from going outside */
+}
+
+/* Animation for the heading */
+.prediction-heading::after {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Height of the line */
+  background-color: #ffffff; /* Color of the line */
+  animation: lineAnimation 2s ease-in-out infinite alternate; /* Animation properties */
+}
+
+/* Animation keyframes */
+@keyframes lineAnimation {
+  0% {
+    width: 0; /* Start with no width */
+  }
+  100% {
+    width: 100%; /* End with full width */
+  }
+}
+
+
+/* Analysis and metrics sections */
+.data-analysis {
+  background-color: #d3bfce; /* Set background color */
+  padding: 20px; /* Add padding */
+  border-radius: 10px; /* Add border radius */
+  margin-bottom: 20px; /* Add margin */
+  width: 90vw; /* Ensures the sections take full width */
+}
+
+/* Predictions section */
+
+.predictions {
+  margin-bottom: 20px; /* Add margin */
+  width: 100%; /* Ensures the section takes full width */
+}
+
+/* Metrics heading */
+.metrics h3 {
+  margin-top: 20px; /* Add top margin */
+}
+
+/* Metrics paragraph */
+.metrics p {
+  margin-bottom: 10px; /* Add bottom margin */
+}
+
+/* Add animation to predictions */
+.predictions li {
+  animation: fadeIn 0.5s ease-in-out; /* Apply fadeIn animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); /* Move element up */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Reset position */
+  }
+}
+
+/* Raw data container */
+.raw-data {
+  margin-top: 20px; /* Add top margin */
+  background-color: #f9fbe7;
+  ;
+  ; /* Set background color */
+  border-radius: 10px; /* Add border radius */
+  padding: 20px; /* Add padding */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  width: 100%; /* Ensures full width */
+}
+
+/* Raw data table */
+.raw-data table {
+  width: 100%; /* Ensures full width */
+  border-collapse: collapse; /* Collapse borders */
+}
+
+/* Table header */
+.raw-data th {
+  background-color: #f0f0f0; /* Set background color */
+  font-weight: bold; /* Make bold */
+}
+
+/* Table cell */
+.raw-data td {
+  border: 1px solid #dddddd; /* Add border */
+  padding: 12px; /* Add padding */
+}
+
+/* Alternate row background color */
+.raw-data tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Set background color */
+}
+
+/* Hover effect for table rows */
+.raw-data tbody tr:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+  transition: background-color 0.3s ease; /* Add transition effect */
+}
+/* today prices */
+.today{
+  margin-top: 50px;
+}
+.stock-data {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.price-box {
+  flex: 1 0 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.label {
+  color: #f9f9f9;
+}
+
+.value {
+  font-size: 20px;
+}
+/* Data Preprocessing */
+.data-preprocessing {
+  background-color: #f9fbe7; /* Light green background color */
+  padding: 20px; /* Add padding */
+  border-radius: 10px; /* Add border radius */
+  margin-bottom: 20px; /* Add margin */
+  width: 87.5vw; /* Ensures the sections take full width */
+  text-align: center; /* Center align content */
+  border: 2px solid #e0e0e0; /* Add border */
+}
+
+/* Modules */
+.data-preprocessing h4 {
+  margin-bottom: 10px; /* Add bottom margin */
+}
+.data-splitting-section {
+  width: 80vw;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Add specific styles for the data-splitting-section if needed */
+}
+.metrics-section {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Add other styles as needed */
+}
+/* Missing Values */
+.missing-values {
+  margin-top: 20px; /* Add top margin */
+  background-color: #ffffff; /* White background color */
+  border-radius: 10px; /* Add border radius */
+  padding: 20px; /* Add padding */
+  border: 2px solid #e0e0e0; /* Add border */
+}
+
+.missing-values h7 {
+  margin-bottom: 10px; /* Add bottom margin */
+}
+
+.missing-values-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.missing-values-table p {
+  background-color: #b3e5fc; /* Light blue background color */
+  padding: 5px 10px; /* Add padding */
+  margin: 5px; /* Add margin */
+  border-radius: 5px; /* Add border radius */
+  transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
+}
+
+.missing-values-table p:hover {
+  transform: scale(1.1); /* Scale up the element on hover */
+}
+
+/* Dropped Columns */
+.dropped-columns {
+  margin-top: 20px; /* Add top margin */
+  background-color: #ffffff; /* White background color */
+  border-radius: 10px; /* Add border radius */
+  padding: 20px; /* Add padding */
+  border: 2px solid #e0e0e0; /* Add border */
+}
+
+.dropped-columns h1 {
+  margin-bottom: 10px; /* Add bottom margin */
+}
+
+.dropped-columns-table {
+  display: flex;
+  justify-content: center;
+}
+
+.dropped-columns-table p {
+  background-color: #ffb74d; /* Light orange background color */
+  padding: 5px 10px; /* Add padding */
+  margin: 5px; /* Add margin */
+  border-radius: 5px; /* Add border radius */
+  transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
+}
+
+.dropped-columns-table p:hover {
+  transform: scale(1.1); /* Scale up the element on hover */
+}
+
+/* Correlation */
+.correlation {
+  width: 87.5vw;
+  margin-top: 20px; /* Add top margin */
+  background-color: #f9fbe7; /* White background color */
+  border-radius: 10px; /* Add border radius */
+  padding: 20px; /* Add padding */
+  border: 2px solid #e0e0e0; /* Add border */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.correlation h6 {
+  margin-bottom: 10px; /* Add bottom margin */
+}
+.chart-container{
+  margin-top: 20px; /* Add top margin */
+  background-color: #f9fbe7; /* White background color */
+  border-radius: 10px; /* Add border radius */
+  padding: 20px; /* Add padding */
+  border: 2px solid #e0e0e0; /* Add border */
+
+
+}
+.chart-metircs{
+  margin-top: 20px; /* Add top margin */
+  background-color: #f9fbe7; /* White background color */
+  border-radius: 10px; /* Add border radius */
+  padding: 20px; /* Add padding */
+  border: 2px solid #e0e0e0; /* Add border */
+  height: 69vh;
+
+
+}
+
+
+.correlation-value p {
+  width: 15vw;
+  background-color: #ffb74d; /* Light orange background color */
+  padding: 5px 10px; /* Add padding */
+  margin: 5px; /* Add margin */
+  border-radius: 5px; /* Add border radius */
+  transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
+}
+
+.correlation-value p:hover {
+  transform: scale(1.1); /* Scale up the element on hover */
+}
+
+/* Heading styles */
+.heading {
+  color: #ffb74d;
+  font-size: large;
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: transform 0.3s ease-in-out; /* Add transition for hover effect */
+  text-align: center; /* Center align heading */
+  margin-top: 20px;
+}
+
+.heading:hover{
+  transform: scale(1.1); /* Scale up the element on hover */
+}
+
+/* Style for authentication buttons */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Add animation to buttons */
+.btn-animated {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-animated:hover {
+  transform: scale(1.05);
+}
+/* ??prediction */
+
+.predictions-list {
+  list-style: none;
+  padding: 0;
+}
+
+.prediction-item {
+  margin-bottom: 20px; /* Adjust as needed for spacing between items */
+}
+
+.prediction-info {
+  background-color: #f0f0f0; /* Default background color */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Different background colors for each price */
+.prediction-item:nth-child(odd) .prediction-info {
+  background-color: #cfe2f3; /* Light blue */
+}
+
+.prediction-item:nth-child(even) .prediction-info {
+  background-color: #ffe6cc; /* Light orange */
+}
+/* Style the prediction text */
+.prediction-info span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px; /* Adjust font size */
+  color: #0044cc;
+}
+
+.prediction-info span:first-child {
+  font-weight: bold; /* Make the first span (Date) bold */
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  .prediction-info span {
+    font-size: 14px; /* Reduce font size on smaller screens */
+  }
+}
+/* Animate the text color change */
+.prediction-info span:hover {
+  animation: colorChange 0.5s ease alternate infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    color: #ff0000; /* Red */
+  }
+  50% {
+    color: #00ff00; /* Green */
+  }
+  100% {
+    color: #0000ff; /* Blue */
+  }
+}
